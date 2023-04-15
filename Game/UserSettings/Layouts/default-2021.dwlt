@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 34
+  controlID: 21
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 461
     height: 1040
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -277,7 +277,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 9c5e0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2cfbffff
+      m_ExpandedIDs: ea0afeffee0dfefffc0efeff9e0ffeffcc14feffcc17feff1a18feff6018feff7e40feff40e2ffff98e3ffff80f7ffff6ef9ffff2cfbffff3a76000084760000747c0000a67c0000307d000076eb01009aeb0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -617,9 +617,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.4355927, y: 4.3988705, z: -10.139912}
+    m_Target: {x: -3.1886194, y: 3.8829741, z: 0.5211309}
     speed: 2
-    m_Value: {x: 5.4355927, y: 4.3988705, z: -10.139912}
+    m_Value: {x: -3.1886194, y: 3.8829741, z: 0.5211309}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -670,9 +670,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 17.207138
+    m_Target: 10.06516
     speed: 2
-    m_Value: 17.207138
+    m_Value: 10.06516
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -823,14 +823,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -6896969116011925350, guid: 02a8b3a758246464f81f3fd6ddba5beb, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.80511236
+    - e00: 0.6970839
       e01: 0
       e02: 0
-      e03: 200.79828
+      e03: 563.7084
       e10: 0
-      e11: 0.80511236
+      e11: 0.6970839
       e12: 0
-      e13: 533.2971
+      e13: 464.9407
       e20: 0
       e21: 0
       e22: 1
@@ -897,22 +897,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Player/Animation/EthanAnim
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Player/Animation/EthanAnim
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Tucha\Documents\GitHub\Chuck-s-Adventures\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c5f0000
-    m_LastClickedID: 24396
-    m_ExpandedIDs: 000000004c5f00004e5f0000505f0000525f000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 78660000
+    m_LastClickedID: 26232
+    m_ExpandedIDs: 00000000325f0000445f00004a5f0000f05f0000346000005c61000034620000da64000028650000be6700006c690000ce6a0000d66b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -940,7 +940,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c5f00004e5f0000505f0000525f0000
+    m_ExpandedIDs: 00000000325f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -967,8 +967,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000066620000166800005c650000645e0000685d00000c7100007867000046690000ac680000c263000000000000aa730000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c623000066620000166800005c650000645e0000685d00000c7100007867000046690000ac680000c263000000000000aa730000226000001a600000266000001e600000586000005e6e0000a87000006c6b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1102,4 +1102,4 @@ MonoBehaviour:
     m_PrefName: Preview_TilemapBrushInspector
   m_Palette: {fileID: 5077937408154069313, guid: 21a0d2c9b7d7cf645be853011b176b7f, type: 3}
   m_DrawGridGizmo: 1
-  m_DrawGizmos: 0
+  m_DrawGizmos: 1

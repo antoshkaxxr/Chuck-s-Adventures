@@ -12,10 +12,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX;
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float moveSpeed = 8;
     [SerializeField] private float jumpForce = 14;
 
-    private enum MovementState {idle, running, jumping, falling, fight }
+    private enum MovementState {idle, running, jumping, falling, fight1, fight2 }
 
     // Start is called before the first frame update
     private void Start()
@@ -72,7 +72,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            state = MovementState.fight;
+            state = MovementState.fight1;
+        }
+
+        if (Input.GetButton("Fire2"))
+        {
+            state = MovementState.fight2;
         }
 
         anim.SetInteger("state", (int)state);
