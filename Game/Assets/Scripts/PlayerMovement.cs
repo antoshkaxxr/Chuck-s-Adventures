@@ -70,12 +70,12 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.falling;
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
         {
             state = MovementState.fight1;
         }
 
-        if (Input.GetButton("Fire2"))
+        if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
         {
             state = MovementState.fight2;
         }
