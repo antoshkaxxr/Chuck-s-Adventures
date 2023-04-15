@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
+	public static bool isDead = false;
 
     private void Start()
     {
@@ -25,7 +26,8 @@ public class PlayerLife : MonoBehaviour
     }
 
     private void Die()
-    {
+    {	
+	    isDead = true;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
