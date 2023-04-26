@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     public int maxHealth = 10;
     public int health;
     public static bool isDead = false;
+    public static bool isHurt = false;
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
@@ -30,7 +31,7 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        anim.SetTrigger("hurt");
+        isHurt = true;
         health -= damage;
         if (health <= 0)
         {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,12 +12,15 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private MushroomHealth mushroomHealth; // Add this line to create a reference to MushroomHealth
+
 
     private float dirX;
     [SerializeField] private float moveSpeed = 8;
     [SerializeField] private float jumpForce = 14;
 
-    private enum MovementState {idle, running, jumping, falling, fight1, fight2 }
+
+    private enum MovementState { idle, running, jumping, falling, fight1, fight2, hurt }
 
     // Start is called before the first frame update
     private void Start()
@@ -33,13 +38,19 @@ public class PlayerMovement : MonoBehaviour
         if (!PlayerLife.isDead)
         {
             dirX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
+            if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1") ||
+                Input.GetKey(KeyCode.O) || Input.GetButton("Fire2") ||
+                PlayerLife.isHurt)
+                rb.velocity = new Vector2(dirX * moveSpeed / 2, rb.velocity.y);
+            else rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
             if (Input.GetButtonDown("Jump") && IsGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
-
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0); // Load the start screen scene
+            }
             UpdateAnimationState();
         }
     }
@@ -47,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState state;
-
         //movement
         if (dirX > 0f)
         {
@@ -84,7 +94,18 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.fight2;
         }
 
+        if (PlayerLife.isHurt)
+        {
+            state = MovementState.hurt;
+            PlayerLife.isHurt = false;
+        }
+
         anim.SetInteger("state", (int)state);
+    }
+
+    private void DamageEnemy()
+    {
+        mushroomHealth.TakeDamage(3);
     }
 
     private bool IsGrounded()

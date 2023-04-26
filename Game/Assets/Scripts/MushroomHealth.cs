@@ -9,16 +9,12 @@ public class MushroomHealth : MonoBehaviour
     private Rigidbody2D myBody;
     private Animator anim;
 
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-        myBody = GetComponent<Rigidbody2D>();
-    }
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         health = maxHealth;
+        anim = GetComponent<Animator>();
+        myBody = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(int damage)
