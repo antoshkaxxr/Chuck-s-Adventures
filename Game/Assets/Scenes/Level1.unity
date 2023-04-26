@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022360832591223538, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022360832591223538, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022360832591223538, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
@@ -431,7 +431,6 @@ GameObject:
   - component: {fileID: 808280225}
   - component: {fileID: 808280224}
   - component: {fileID: 808280229}
-  - component: {fileID: 808280228}
   - component: {fileID: 808280227}
   m_Layer: 11
   m_Name: MushroomEnemy
@@ -521,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808280223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.57, y: 3.63, z: 0}
+  m_LocalPosition: {x: 24.91, y: 3.52, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -542,24 +541,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 1.5
-  colliderDistance: 2
   damage: 2
+  colliderDistance: 2
   boxCollider: {fileID: 808280229}
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &808280228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808280223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df001f518cd737489cc58788bacc47b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &808280229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1626,7 +1613,6 @@ GameObject:
   - component: {fileID: 1509985194}
   - component: {fileID: 1509985195}
   - component: {fileID: 1509985196}
-  - component: {fileID: 1509985197}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1798,18 +1784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c6df6b1d6f8fc489b041dde46f7b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1509985197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509985189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c25e98432a6ab44cbc7989161170497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   maxHealth: 10
   health: 0
 --- !u!1001 &1878583036
@@ -1869,7 +1843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022360832591223538, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442680dd9dac1e84880bca2bb0e3afe6, type: 3}

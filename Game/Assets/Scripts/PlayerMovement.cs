@@ -24,20 +24,24 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        PlayerLife.isDead = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (!PlayerLife.isDead)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+            dirX = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        UpdateAnimationState();
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+
+            UpdateAnimationState();
+        }
     }
 
     private void UpdateAnimationState()

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public int maxHealth = 10;
+    public int health;
+    public static bool isDead = false;
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
@@ -14,6 +17,7 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        health = maxHealth;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,8 +28,19 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        anim.SetTrigger("hurt");
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     private void Die()
     {
+        isDead = true;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }

@@ -15,7 +15,7 @@ public class MushroomEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
-    private PlayerHealth playerHealth;
+    private PlayerLife PlayerLife;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class MushroomEnemy : MonoBehaviour
         cooldownTimer += Time.deltaTime;
         if (IsPlayerInSight())
         {
-            if (playerHealth.health <= 0) return;
+            if (PlayerLife.health <= 0) return;
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
@@ -43,7 +43,7 @@ public class MushroomEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<PlayerHealth>();
+            PlayerLife = hit.transform.GetComponent<PlayerLife>();
         return hit.collider != null;
     }
 
@@ -56,8 +56,8 @@ public class MushroomEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if (playerHealth.health <= 0) return;
+        if (PlayerLife.health <= 0) return;
         if (IsPlayerInSight())
-            playerHealth.TakeDamage(damage);
+            PlayerLife.TakeDamage(damage);
     }
 }
