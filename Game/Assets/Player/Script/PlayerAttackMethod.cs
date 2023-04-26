@@ -106,7 +106,7 @@ namespace EthanTheHero
 			//Set combo attack 03
 			if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
 			{
-				//See if attak button is clicked
+				//See if attack button is clicked
 				if (Input.GetMouseButtonDown(0))
 					atkButtonClickedOnAtk03 = true;
 
