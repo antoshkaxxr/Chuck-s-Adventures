@@ -1018,20 +1018,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &623590122
+--- !u!114 &623590123 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+  m_PrefabInstance: {fileID: 6488929932720659497}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623590114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543a9e34fb81763478da46b1a2b9791a, type: 3}
+  m_Script: {fileID: 11500000, guid: 607c46f2287a0a9419723e0b77dc6155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
-  health: 0
 --- !u!1 &745147083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,9 +3619,16 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  mushroomHealth: {fileID: 0}
+  damage: 3
   moveSpeed: 8
   jumpForce: 14
+  MushroomEnemy: {fileID: 623590123}
+  colliderDistance: 1.5
+  boxCollider: {fileID: 1509985193}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  range: 1
 --- !u!95 &1509985195
 Animator:
   serializedVersion: 5
@@ -8009,6 +8013,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: colliderDistance
+      value: 0.8
       propertyPath: damage
       value: 1
       objectReference: {fileID: 0}

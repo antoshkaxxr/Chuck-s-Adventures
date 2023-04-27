@@ -12,12 +12,18 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private LayerMask jumpableGround;
-    [SerializeField] private MushroomHealth mushroomHealth; // Add this line to create a reference to MushroomHealth
+    [SerializeField] private int damage;
 
 
     private float dirX;
     [SerializeField] private float moveSpeed = 8;
     [SerializeField] private float jumpForce = 14;
+    
+    public MushroomEnemy MushroomEnemy;
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private float range;
 
 
     private enum MovementState { idle, running, jumping, falling, fight1, fight2, hurt }
@@ -103,9 +109,28 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
+    private bool IsEnemyInSight()
+    {
+        var hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * (range * transform.localScale.x * colliderDistance), 
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
+            0, Vector2.left, 0, enemyLayer);
+        if (hit.collider != null)
+            MushroomEnemy = hit.transform.GetComponent<MushroomEnemy>();
+        return hit.collider != null;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * (range * transform.localScale.x * colliderDistance), 
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
+    
     private void DamageEnemy()
     {
-        mushroomHealth.TakeDamage(3);
+        if (MushroomEnemy.health <= 0) return;
+        if (IsEnemyInSight())
+            MushroomEnemy.TakeDamage(damage);
     }
 
     private bool IsGrounded()

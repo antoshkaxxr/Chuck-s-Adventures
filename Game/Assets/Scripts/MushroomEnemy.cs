@@ -16,9 +16,15 @@ public class MushroomEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
     private PlayerLife PlayerLife;
+    
+    [Header ("Health")]
+    public int maxHealth = 6;
+    public int health;
+    public float deathDelay = 1;
 
     private void Awake()
     {
+        health = maxHealth;
         anim = GetComponent<Animator>();
     }
 
@@ -59,5 +65,21 @@ public class MushroomEnemy : MonoBehaviour
         if (PlayerLife.health <= 0) return;
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        anim.SetTrigger("hurt");
+        health -= damage;
+        if (health <= 0)
+        {
+            anim.SetTrigger("die");
+            Invoke(nameof(DestroyEnemy), deathDelay);
+        }
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
