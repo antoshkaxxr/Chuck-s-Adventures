@@ -4308,7 +4308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 388.4, y: -45.179688}
+  m_AnchoredPosition: {x: 388.39996, y: -45.179688}
   m_SizeDelta: {x: 141.27002, y: 141.27002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008435237
@@ -8013,14 +8013,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: attackCooldown
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: colliderDistance
       value: 0.8
-      propertyPath: damage
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder
