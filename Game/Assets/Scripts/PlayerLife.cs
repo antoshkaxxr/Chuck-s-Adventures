@@ -2,23 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 5;
     public int health;
+	public int nuboOfHeart;
     public static bool isDead = false;
     public static bool isHurt = false;
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-
+	
+	public Image[] hearts;
+	public Sprite fullHearts;
+	public Sprite emptyHearts;
+	public int numberHelthNow = 4;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
+		for (var i=0; i < 5; i++)
+		{
+			hearts[i].sprite = fullHearts;
+		}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,8 +41,11 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         isHurt = true;
         health -= damage;
+		hearts[numberHelthNow].sprite = emptyHearts;
+		numberHelthNow -= 1;
         if (health <= 0)
         {
             Die();
