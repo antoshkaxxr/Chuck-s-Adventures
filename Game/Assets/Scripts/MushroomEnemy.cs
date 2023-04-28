@@ -62,7 +62,7 @@ public class MushroomEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if (PlayerLife.health <= 0) return;
+        if (PlayerLife.health <= 0) return; 
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);
     }
