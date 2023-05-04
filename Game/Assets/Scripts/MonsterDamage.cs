@@ -6,13 +6,13 @@ public class MonsterDamage : MonoBehaviour
 {
     public int damage;
 
-    public PlayerLife PlayerLife;
+    public PlayerLife playerLife;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLife.TakeDamage(damage);
+            playerLife.TakeDamage(damage);
         }
     }
 }
