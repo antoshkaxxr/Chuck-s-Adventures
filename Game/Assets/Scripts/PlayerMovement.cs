@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!PlayerLife.isDead)
+        if (!PlayerLife.isDead && !PauseMenu.PauseGame)
         {
             dirX = Input.GetAxisRaw("Horizontal");
             if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1") ||
@@ -52,10 +52,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump") && IsGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                SceneManager.LoadScene(0); // Load the start screen scene
             }
             UpdateAnimationState();
         }
