@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomEnemy : MonoBehaviour
+public class SkeletonEnemy : MonoBehaviour
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -18,14 +20,17 @@ public class MushroomEnemy : MonoBehaviour
     private PlayerLife PlayerLife;
     
     [Header ("Health")]
-    public int maxHealth = 6;
+    public int maxHealth = 8;
     public int enemyHealth;
     public float deathDelay = 1;
+
+    private SkeletonPatrol skeletonPatrol;
 
     private void Awake()
     {
         enemyHealth = maxHealth;
         anim = GetComponent<Animator>();
+        skeletonPatrol = GetComponentInParent<SkeletonPatrol>();
     }
 
     private void Update()
@@ -40,6 +45,9 @@ public class MushroomEnemy : MonoBehaviour
                 anim.SetTrigger("attack");
             }
         }
+
+        if (skeletonPatrol != null)
+            skeletonPatrol.enabled = !IsPlayerInSight();
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -55,7 +63,7 @@ public class MushroomEnemy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * (range * transform.localScale.x * colliderDistance), 
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
@@ -74,6 +82,10 @@ public class MushroomEnemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             anim.SetTrigger("die");
+            if (GetComponentInParent<SkeletonPatrol>() != null)
+                GetComponentInParent<SkeletonPatrol>().enabled = false;
+            if (GetComponent<SkeletonEnemy>() != null)
+                GetComponent<SkeletonEnemy>().enabled = false;
             Invoke(nameof(DestroyEnemy), deathDelay);
         }
     }

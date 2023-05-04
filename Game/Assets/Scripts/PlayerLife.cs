@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     public int maxHealth = 5;
-    public int health;
+    public int playerHealth;
 	public int nuboOfHeart;
     public static bool isDead = false;
     public static bool isHurt = false;
@@ -24,7 +24,7 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        health = maxHealth;
+        playerHealth = maxHealth;
 		for (var i=0; i < 5; i++)
 		{
 			hearts[i].sprite = fullHearts;
@@ -41,12 +41,11 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
         isHurt = true;
-        health -= damage;
+        playerHealth -= damage;
 		hearts[numberHelthNow].sprite = emptyHearts;
 		numberHelthNow -= 1;
-        if (health <= 0)
+        if (playerHealth <= 0)
         {
             Die();
         }

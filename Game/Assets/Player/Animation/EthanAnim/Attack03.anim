@@ -28,8 +28,10 @@ AnimationClip:
     - time: 0.25
       value: {fileID: -908575178210889621, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - time: 0.33333334
-      value: {fileID: -7279309264870829098, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
+      value: {fileID: -908575178210889621, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - time: 0.41666666
+      value: {fileID: -7279309264870829098, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
+    - time: 0.5
       value: {fileID: 8896925389107748875, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     attribute: m_Sprite
     path: 
@@ -54,6 +56,7 @@ AnimationClip:
     - {fileID: -9094496271808380837, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - {fileID: 1520931560637763677, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - {fileID: -908575178210889621, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
+    - {fileID: -908575178210889621, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - {fileID: -7279309264870829098, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
     - {fileID: 8896925389107748875, guid: e837422a5c7d266498ae8e1e6778052e, type: 3}
   m_AnimationClipSettings:
@@ -61,7 +64,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,7 +85,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.25
-    functionName: DamageEnemy
+    functionName: DamageMushroomEnemy
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: DamageSkeletonEnemy
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
