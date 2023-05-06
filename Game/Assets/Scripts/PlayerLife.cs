@@ -53,11 +53,8 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
-        if (isDead)
-        {
-            return;
-        }
         isDead = true;
+        rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
 
