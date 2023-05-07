@@ -42,8 +42,8 @@ public class SettingMenu : MonoBehaviour
                 && resolutions[i].height == Screen.currentResolution.height)
                 currentResolutionIndex = i;
         }
-
         resolutionDropdown.AddOptions(options);
+		resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
         tempResolutionIndex = currentResolutionIndex;

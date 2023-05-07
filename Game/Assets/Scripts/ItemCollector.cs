@@ -8,15 +8,23 @@ public class ItemCollector : MonoBehaviour
 {
     private int artefacts = 0;
 
-    [SerializeField] private Text artefactText;
-
+	public Image[] artefactsImage;
+	public Sprite artefactSprite;
+	public Sprite emptyArtefactSprite;
+	void Start()
+    {
+        for (int i = 0; i < artefactsImage.Length; i++)
+   		{
+        	artefactsImage[i].sprite = emptyArtefactSprite;
+    	}
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Artefact"))
         {
             Destroy(collision.gameObject);
             artefacts++;
-            artefactText.text = "Реликвии: " + artefacts + "/6";
+			artefactsImage[artefacts-1].sprite = artefactSprite;
         }
     }
 }
