@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6488929932987317388}
   - component: {fileID: 6488929932987317386}
   - component: {fileID: 6488929932987317391}
-  m_Layer: 11
+  - component: {fileID: -2141104729738720257}
+  m_Layer: 10
   m_Name: MushroomEnemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -148,13 +149,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: 1.5
-  damage: 2
-  colliderDistance: 2
+  range: 1
+  damage: 1
+  colliderDistance: 1.7
   boxCollider: {fileID: 6488929932987317388}
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  maxHealth: 4
+  enemyHealth: 0
+  deathDelay: 1
 --- !u!251 &6488929932987317391
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -174,3 +178,24 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!50 &-2141104729738720257
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488929932987317430}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5

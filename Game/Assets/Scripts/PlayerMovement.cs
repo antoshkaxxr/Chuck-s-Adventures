@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -75,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
         {
-            state = MovementState.fight1;
+            state = MovementState.fight2;
         }
 
         if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
         {
-            state = MovementState.fight2;
+            state = MovementState.fight1;
         }
 
         if (PlayerLife.isHurt)

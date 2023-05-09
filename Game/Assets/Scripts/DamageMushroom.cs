@@ -17,8 +17,10 @@ public class DamageMushroom : MonoBehaviour
     public MushroomEnemy mushroomEnemy5;
     public MushroomEnemy[] mushroomEnemies;
     public int mushroomCounter;
-    [SerializeField] private int damage;
-    
+    [SerializeField] private int damage1 = 1;
+    [SerializeField] private int damage2 = 2;
+
+
     public void Awake()
     {
         mushroomEnemies = new []
@@ -49,7 +51,18 @@ public class DamageMushroom : MonoBehaviour
         if (IsEnemyInSight())
         {
             if (mushroomEnemies[mushroomCounter].enemyHealth <= 0) return;
-            mushroomEnemies[mushroomCounter].TakeDamage(damage);
+            {
+                if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
+                {
+                    mushroomEnemies[mushroomCounter].TakeDamage(damage1);
+                }
+
+                if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
+                {
+                    mushroomEnemies[mushroomCounter].TakeDamage(damage2);
+                }
+
+            }
             if (mushroomEnemies[mushroomCounter].enemyHealth == 0)
                 mushroomCounter++;
         }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2148919895887151049}
   - component: {fileID: 2148919895887151048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkeletonPatrol
-  m_TagString: Untagged
+  m_TagString: SkeletonEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2148919896416216948}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightEdge
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2148919897596285819}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftEdge
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

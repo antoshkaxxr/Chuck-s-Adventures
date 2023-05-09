@@ -8,7 +8,6 @@ public class PlayerLife : MonoBehaviour
 {
     public int maxHealth = 5;
     public int playerHealth;
-	public int nuboOfHeart;
     public static bool isDead = false;
     public static bool isHurt = false;
     private Rigidbody2D rb;
@@ -18,14 +17,14 @@ public class PlayerLife : MonoBehaviour
 	public Image[] hearts;
 	public Sprite fullHearts;
 	public Sprite emptyHearts;
-	public int numberHelthNow = 4;
+	public int numberHealthNow = 4;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         playerHealth = maxHealth;
-		for (var i=0; i < 5; i++)
+		for (var i = 0; i < 5; i++)
 		{
 			hearts[i].sprite = fullHearts;
 		}
@@ -43,8 +42,8 @@ public class PlayerLife : MonoBehaviour
     {
         isHurt = true;
         playerHealth -= damage;
-		hearts[numberHelthNow].sprite = emptyHearts;
-		numberHelthNow -= 1;
+		hearts[numberHealthNow].sprite = emptyHearts;
+        numberHealthNow -= 1;
         if (playerHealth <= 0)
         {
             Die();
@@ -54,7 +53,10 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.bodyType = RigidbodyType2D.Static;
+        for (var i = 0; i < 5; i++)
+        {
+            hearts[i].sprite = emptyHearts;
+        }
         anim.SetTrigger("death");
     }
 
