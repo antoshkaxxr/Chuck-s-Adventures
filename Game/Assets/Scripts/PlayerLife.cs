@@ -52,11 +52,14 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+		if (isDead)
+			return;
         isDead = true;
         for (var i = 0; i < 5; i++)
         {
             hearts[i].sprite = emptyHearts;
         }
+
         anim.SetTrigger("death");
     }
 
