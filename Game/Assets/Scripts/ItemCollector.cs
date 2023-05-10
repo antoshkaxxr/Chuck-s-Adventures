@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int artefacts = 0;
+    public int artefacts = 0;
 
 	public Image[] artefactsImage;
 	public Sprite artefactSprite;
