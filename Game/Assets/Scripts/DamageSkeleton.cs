@@ -17,8 +17,10 @@ public class DamageSkeleton : MonoBehaviour
     public SkeletonEnemy skeletonEnemy5;
     public SkeletonEnemy[] skeletonEnemies;
     public int skeletonCounter;
-    [SerializeField] private int damage;
-    
+    [SerializeField] private int damage1;
+    [SerializeField] private int damage2;
+
+
     public void Awake()
     {
         skeletonEnemies = new []
@@ -49,7 +51,14 @@ public class DamageSkeleton : MonoBehaviour
         if (IsEnemyInSight())
         {
             if (skeletonEnemies[skeletonCounter].enemyHealth <= 0) return;
-            skeletonEnemies[skeletonCounter].TakeDamage(damage);
+            if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
+            {
+                skeletonEnemies[skeletonCounter].TakeDamage(damage1);
+            }
+            if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
+            {
+                skeletonEnemies[skeletonCounter].TakeDamage(damage2);
+            }
             if (skeletonEnemies[skeletonCounter].enemyHealth == 0)
                 skeletonCounter++;
         }

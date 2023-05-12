@@ -91,14 +91,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5
+  - time: 0.375
     functionName: DamageSkeletonEnemy
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.625
+  - time: 0.375
     functionName: DamageBossEnemy
     data: 
     objectReferenceParameter: {fileID: 0}

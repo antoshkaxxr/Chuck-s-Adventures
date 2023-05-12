@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerLife.isHurt)
                 rb.velocity = new Vector2(dirX * moveSpeed / 2, rb.velocity.y);
             else rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-            if (Input.GetButtonDown("Jump") && IsGrounded())
+            if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }

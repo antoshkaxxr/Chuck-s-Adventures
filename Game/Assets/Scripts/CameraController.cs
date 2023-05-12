@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private float zoomAmount = 4f;
+    [SerializeField] private int zoomAmount = 4;
 
     private void Update()
     {
