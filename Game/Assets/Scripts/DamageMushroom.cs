@@ -51,17 +51,13 @@ public class DamageMushroom : MonoBehaviour
         if (IsEnemyInSight())
         {
             if (mushroomEnemies[mushroomCounter].enemyHealth <= 0) return;
+            if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
             {
-                if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
-                {
-                    mushroomEnemies[mushroomCounter].TakeDamage(damage1);
-                }
-
-                if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
-                {
-                    mushroomEnemies[mushroomCounter].TakeDamage(damage2);
-                }
-
+                mushroomEnemies[mushroomCounter].TakeDamage(damage1);
+            }
+            if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
+            {
+                mushroomEnemies[mushroomCounter].TakeDamage(damage2);
             }
             if (mushroomEnemies[mushroomCounter].enemyHealth == 0)
                 mushroomCounter++;

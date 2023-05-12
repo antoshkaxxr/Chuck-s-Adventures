@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: colliderDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5319,6 +5323,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: colliderDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5727,7 +5735,8 @@ GameObject:
   - component: {fileID: 776551768}
   - component: {fileID: 776551767}
   - component: {fileID: 776551766}
-  - component: {fileID: 776551765}
+  - component: {fileID: 776551775}
+  - component: {fileID: 776551774}
   - component: {fileID: 776551764}
   m_Layer: 9
   m_Name: Player
@@ -5757,33 +5766,6 @@ MonoBehaviour:
   - {fileID: 674998435}
   artefactSprite: {fileID: 21300000, guid: 8ca4cefcc4b524dbf989af3322d6c328, type: 3}
   emptyArtefactSprite: {fileID: 21300000, guid: 28c56b962bb954ee791ef59e52b19444, type: 3}
---- !u!114 &776551765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776551763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47d95b379848244f949611c08f2d51a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxCollider: {fileID: 776551770}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  range: 1.2
-  colliderDistance: 1.2
-  skeletonEnemy1: {fileID: 0}
-  skeletonEnemy2: {fileID: 0}
-  skeletonEnemy3: {fileID: 0}
-  skeletonEnemy4: {fileID: 0}
-  skeletonEnemy5: {fileID: 0}
-  skeletonEnemies:
-  - {fileID: 0}
-  skeletonCounter: 0
-  damage: 2
 --- !u!114 &776551766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5991,6 +5973,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &776551774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776551763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28f3800848361349a86dba53a03f1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 776551770}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  range: 0
+  colliderDistance: 0
+  bossEnemy: {fileID: 0}
+  damage1: 1
+  damage2: 2
+--- !u!114 &776551775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776551763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47d95b379848244f949611c08f2d51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 776551770}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  range: 0
+  colliderDistance: 0
+  skeletonEnemy1: {fileID: 0}
+  skeletonEnemy2: {fileID: 0}
+  skeletonEnemy3: {fileID: 0}
+  skeletonEnemy4: {fileID: 0}
+  skeletonEnemy5: {fileID: 0}
+  skeletonEnemies: []
+  skeletonCounter: 0
+  damage: 0
 --- !u!1001 &776779936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6966,7 +6995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: colliderDistance
-      value: 1.7
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder
@@ -8903,6 +8932,10 @@ PrefabInstance:
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: maxHealth
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
+      propertyPath: colliderDistance
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder
@@ -35941,7 +35974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317386, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: colliderDistance
-      value: 1.7
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6488929932987317387, guid: 9aa56a87dc526774d857c5647704b7bd, type: 3}
       propertyPath: m_RootOrder

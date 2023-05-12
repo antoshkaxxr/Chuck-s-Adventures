@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - MushroomEnemy
   - SkeletonEnemy
+  - Artefact
+  - BossEnemy
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Player
   - MushroomEnemy
   - SkeletonEnemy
-  - 
+  - BossEnemy
   - 
   - 
   - 
