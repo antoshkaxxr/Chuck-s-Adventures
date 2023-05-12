@@ -7,13 +7,10 @@ using UnityEngine.SceneManagement;
 public class SettingMenu : MonoBehaviour
 {
     public Dropdown resolutionDropdown;
-    public Toggle fullScreenToggle; // добавлено поле для чекбокса
     Resolution[] resolutions;
     int currentResolutionIndex;
     int tempResolutionIndex;
-
-    bool prevFullscreenState;
-    bool isFullScreen = true;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,12 +45,7 @@ public class SettingMenu : MonoBehaviour
         LoadSettings(currentResolutionIndex);
         tempResolutionIndex = currentResolutionIndex;
     }
-
-    public void SetFullscreen(bool isFullscreen)
-    {
-        isFullScreen = isFullscreen;
-        UpdateFullscreenToggle(); // обновление состояния чекбокса
-    }
+    
 
     public void SetResolution(int resolutionIndex)
     {
@@ -62,7 +54,6 @@ public class SettingMenu : MonoBehaviour
 
     public void Back()
     {
-        Screen.fullScreen = prevFullscreenState;
         SceneManager.LoadScene("StartMenu");
     }
 
@@ -71,9 +62,7 @@ public class SettingMenu : MonoBehaviour
         currentResolutionIndex = tempResolutionIndex;
         Resolution resolution = resolutions[currentResolutionIndex];
         Screen.SetResolution(resolution.width,
-            resolution.height, isFullScreen);
-        Screen.fullScreen = isFullScreen;
-        PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(isFullScreen));
+            resolution.height, true);
         PlayerPrefs.SetInt("ResolutionPreference", currentResolutionIndex);
     }
 
@@ -87,20 +76,6 @@ public class SettingMenu : MonoBehaviour
 
     public void LoadSettings(int currentResolutionIndex)
     {
-        if (PlayerPrefs.HasKey("FullscreenPreference"))
-            isFullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
-        else
-            isFullScreen = true;
-        prevFullscreenState = Screen.fullScreen;
-        Screen.fullScreen = isFullScreen;
         tempResolutionIndex = currentResolutionIndex;
-
-        UpdateFullscreenToggle(); // обновление состояния чекбокса
-    }
-
-    void UpdateFullscreenToggle()
-    {
-        if (fullScreenToggle != null)
-            fullScreenToggle.isOn = isFullScreen;
     }
 }
