@@ -7,13 +7,19 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
+    [SerializeField] private AudioSource missAttack;
+    
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 8;
     [SerializeField] private float jumpForce = 14;
+    [SerializeField] private AudioSource jumpSound;
     private float dirX;
     
     private enum MovementState { idle, running, jumping, falling, fight1, fight2, hurt }
+
+    private bool isAttacking;
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -34,10 +40,22 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1") ||
                 Input.GetKey(KeyCode.O) || Input.GetButton("Fire2") ||
                 PlayerLife.isHurt)
+            {
                 rb.velocity = new Vector2(dirX * moveSpeed / 2, rb.velocity.y);
-            else rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+                if (!isAttacking)
+                {
+                    missAttack.Play();
+                    isAttacking = true;
+                }
+            }
+            else
+            {
+                rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+                isAttacking = false;
+            }
             if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
             {
+                jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
             UpdateAnimationState();

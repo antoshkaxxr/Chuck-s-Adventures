@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageMushroom : MonoBehaviour
 {
+	[SerializeField] private AudioSource attackMob;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float range;
@@ -53,10 +54,12 @@ public class DamageMushroom : MonoBehaviour
             if (mushroomEnemies[mushroomCounter].enemyHealth <= 0) return;
             if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
             {
+				attackMob.Play();
                 mushroomEnemies[mushroomCounter].TakeDamage(damage1);
             }
             if (Input.GetKey(KeyCode.O) || Input.GetButton("Fire2"))
             {
+				attackMob.Play();
                 mushroomEnemies[mushroomCounter].TakeDamage(damage2);
             }
             if (mushroomEnemies[mushroomCounter].enemyHealth == 0)

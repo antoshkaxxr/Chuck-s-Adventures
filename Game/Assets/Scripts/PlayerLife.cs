@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
+	[SerializeField] private AudioSource damageSound;
     public int maxHealth = 5;
     public int playerHealth;
     public static bool isDead = false;
@@ -41,6 +42,7 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+		damageSound.Play();
         isHurt = true;
         playerHealth -= damage;
 		hearts[numberHealthNow].sprite = emptyHearts;
@@ -53,6 +55,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+		damageSound.Play();
         isDead = true;
         for (var i = 0; i < 5; i++)
         {

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
     private int artefacts = 0;
-
+	[SerializeField] private AudioSource collectArtefact;
 	public Image[] artefactsImage;
 	public Sprite artefactSprite;
 	public Sprite emptyArtefactSprite;
@@ -23,6 +23,7 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Artefact"))
         {
             Destroy(collision.gameObject);
+			collectArtefact.Play();
             artefacts++;
 			artefactsImage[artefacts-1].sprite = artefactSprite;
         }
