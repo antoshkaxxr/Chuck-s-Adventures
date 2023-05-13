@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MushroomEnemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackMushroom;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -62,6 +63,7 @@ public class MushroomEnemy : MonoBehaviour
 
     public void DamagePlayer()
     {
+        attackMushroom.Play();
         if (PlayerLife.playerHealth <= 0) return;
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);
