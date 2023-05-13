@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageSkeleton : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackSkeleton;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float range;
@@ -50,6 +51,7 @@ public class DamageSkeleton : MonoBehaviour
     {
         if (IsEnemyInSight())
         {
+            attackSkeleton.Play();
             if (skeletonEnemies[skeletonCounter].enemyHealth <= 0) return;
             if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
             {

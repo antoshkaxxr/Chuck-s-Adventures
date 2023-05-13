@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageBoss : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackBoss;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float range;
@@ -35,6 +36,7 @@ public class DamageBoss : MonoBehaviour
     {
         if (IsBossInSight())
         {
+            attackBoss.Play();
             if (bossEnemy.bossHealth <= 0) return;
             if (Input.GetKey(KeyCode.K) || Input.GetButton("Fire1"))
                 bossEnemy.TakeDamage(damage1);
