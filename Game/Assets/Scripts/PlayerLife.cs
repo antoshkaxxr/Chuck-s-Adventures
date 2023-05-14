@@ -42,6 +42,7 @@ public class PlayerLife : MonoBehaviour
         {
             hearts[playerHealth].sprite = fullHearts;
             playerHealth++;
+            numberHealthNow++;
             healCounter--;
             HealingPotion.text = $"x{healCounter}";
             useHeal.Play();
@@ -74,7 +75,7 @@ public class PlayerLife : MonoBehaviour
         isHurt = true;
         playerHealth -= damage;
 		hearts[numberHealthNow].sprite = emptyHearts;
-        numberHealthNow -= 1;
+        numberHealthNow--;
         if (playerHealth <= 0)
         {
             Die();
