@@ -11,6 +11,7 @@ TagManager:
   - SkeletonEnemy
   - Artefact
   - BossEnemy
+  - HealingPotion
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-	[SerializeField] private AudioSource damageSound;
+    [SerializeField] private AudioSource damageSound;
+    [SerializeField] private AudioSource takeHeal;
+    [SerializeField] private AudioSource useHeal;
+    [SerializeField] private Text HealingPotion;
     public int maxHealth = 5;
     public int playerHealth;
     public static bool isDead = false;
@@ -19,6 +22,8 @@ public class PlayerLife : MonoBehaviour
 	public Sprite fullHearts;
 	public Sprite emptyHearts;
 	public int numberHealthNow = 4;
+    private int healCounter;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,12 +36,35 @@ public class PlayerLife : MonoBehaviour
 		}
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && healCounter > 0 && playerHealth != maxHealth)
+        {
+            hearts[playerHealth].sprite = fullHearts;
+            playerHealth++;
+            healCounter--;
+            HealingPotion.text = $"x{healCounter}";
+            useHeal.Play();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
             if (!isDead)
                 Die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HealingPotion"))
+        {
+            Destroy(collision.gameObject);
+            healCounter++;
+            HealingPotion.text = $"x{healCounter}";
+            takeHeal.Play();
         }
     }
 
