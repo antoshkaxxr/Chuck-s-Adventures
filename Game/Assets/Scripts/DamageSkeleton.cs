@@ -16,6 +16,8 @@ public class DamageSkeleton : MonoBehaviour
     public SkeletonEnemy skeletonEnemy3;
     public SkeletonEnemy skeletonEnemy4;
     public SkeletonEnemy skeletonEnemy5;
+    public SkeletonEnemy skeletonEnemy6;
+    public SkeletonEnemy skeletonEnemy7;
     public SkeletonEnemy[] skeletonEnemies;
     public int skeletonCounter;
     [SerializeField] private int damage1;
@@ -26,7 +28,8 @@ public class DamageSkeleton : MonoBehaviour
     {
         skeletonEnemies = new []
         {
-            skeletonEnemy1, skeletonEnemy2, skeletonEnemy3, skeletonEnemy4, skeletonEnemy5
+            skeletonEnemy1, skeletonEnemy2, skeletonEnemy3, skeletonEnemy4, 
+            skeletonEnemy5, skeletonEnemy6, skeletonEnemy7
         };
     }
 
