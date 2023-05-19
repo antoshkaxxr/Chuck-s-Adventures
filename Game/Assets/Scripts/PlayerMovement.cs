@@ -1,3 +1,4 @@
+    using System;
     using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -113,5 +114,17 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Platform"))
+            this.transform.parent = col.transform;
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+            this.transform.parent = null;
     }
 }
