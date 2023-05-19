@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossEnemy : MonoBehaviour
+public class FlyingEyeEnemy : MonoBehaviour
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -23,13 +23,13 @@ public class BossEnemy : MonoBehaviour
     public bool isFlipped = false;
     
     [Header ("Health")]
-    public int maxHealth = 25;
-    public int bossHealth;
-    public float deathDelay = 2;
+    public int maxHealth = 4;
+    public int eyeHealth;
+    public float deathDelay = 1;
 
     private void Awake()
     {
-        bossHealth = maxHealth;
+        eyeHealth = maxHealth;
         anim = GetComponent<Animator>();
     }
     
@@ -55,13 +55,11 @@ public class BossEnemy : MonoBehaviour
                 anim.SetTrigger("Attack");
             }
         }
-
-        anim.SetBool("isIdle", Math.Abs(transform.position.x - player.position.x) < 0.1f);
     }
     
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * (range * transform.localScale.x * colliderDistance), 
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
@@ -95,8 +93,8 @@ public class BossEnemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         anim.SetTrigger("Hurt");
-        bossHealth -= damage;
-        if (bossHealth <= 0)
+        eyeHealth -= damage;
+        if (eyeHealth <= 0)
         {
             anim.SetTrigger("Die");
             Invoke(nameof(DestroyEnemy), deathDelay);

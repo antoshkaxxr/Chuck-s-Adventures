@@ -12,6 +12,8 @@ TagManager:
   - Artefact
   - BossEnemy
   - HealingPotion
+  - FlyingEyeEnemy
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - MushroomEnemy
   - SkeletonEnemy
   - BossEnemy
-  - 
+  - FlyingEyeEnemy
   - 
   - 
   - 
