@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
 	public GameObject SettingUI;
+	public GameObject Levels;
+	public static int sceneIndex=1;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneIndex);
 		PauseMenu.PauseGame = false;
     }
     public void ExitGame()
@@ -22,6 +24,11 @@ public class StartMenu : MonoBehaviour
     	SettingMenu settingMenu = FindObjectOfType<SettingMenu>();
     	settingMenu.LoadSettings(0);
     }
+	
+	public void ChangeLevel()
+	{
+		Levels.SetActive(true);
+	}
 	
 	void Update()
     {
