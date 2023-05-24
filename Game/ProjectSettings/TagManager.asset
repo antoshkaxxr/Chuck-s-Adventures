@@ -14,6 +14,8 @@ TagManager:
   - HealingPotion
   - FlyingEyeEnemy
   - Platform
+  - BoxJump
+  - BossHead
   layers:
   - Default
   - TransparentFX

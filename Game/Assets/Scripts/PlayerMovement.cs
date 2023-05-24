@@ -120,6 +120,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Platform"))
             this.transform.parent = col.transform;
+        if (col.gameObject.CompareTag("BoxJump"))
+        {
+            var playerRb = GetComponent<Rigidbody2D>();
+            playerRb.AddForce(new Vector2(0, 1500f));
+            
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
