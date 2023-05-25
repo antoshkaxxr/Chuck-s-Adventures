@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class ItemCollector : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class ItemCollector : MonoBehaviour
 	public Image[] artefactsImage;
 	public Sprite artefactSprite;
 	public Sprite emptyArtefactSprite;
+	public TextMeshProUGUI artefactsText;
 	void Start()
     {
         for (int i = 0; i < artefactsImage.Length; i++)
@@ -26,6 +27,7 @@ public class ItemCollector : MonoBehaviour
 			collectArtefact.Play();
             artefacts++;
 			artefactsImage[artefacts-1].sprite = artefactSprite;
+			artefactsText.enabled = false;
         }
     }
 }

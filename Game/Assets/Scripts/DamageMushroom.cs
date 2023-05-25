@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DamageMushroom : MonoBehaviour
 {
@@ -20,7 +21,9 @@ public class DamageMushroom : MonoBehaviour
     public int mushroomCounter;
     [SerializeField] private int damage1 = 1;
     [SerializeField] private int damage2 = 2;
-
+	public TextMeshProUGUI damageText;
+	public TextMeshProUGUI axesText; 
+	
 
     public void Awake()
     {
@@ -64,6 +67,8 @@ public class DamageMushroom : MonoBehaviour
             }
             if (mushroomEnemies[mushroomCounter].enemyHealth == 0)
                 mushroomCounter++;
+			damageText.enabled = false;
+			axesText.enabled = false;
         }
     }
 }

@@ -1,7 +1,7 @@
-    using System;
-    using UnityEngine;
+using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     [SerializeField] private AudioSource missAttack;
-    
-
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 8;
     [SerializeField] private float jumpForce = 14;
@@ -20,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState { idle, running, jumping, falling, fight1, fight2, hurt }
 
     private bool isAttacking;
+    public TextMeshProUGUI movingText;
     
 
     // Start is called before the first frame update
@@ -58,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                movingText.enabled = false;
             }
             UpdateAnimationState();
         }
@@ -71,11 +71,13 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.running;
             sprite.flipX = false;
+            movingText.enabled = false;
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
             sprite.flipX = true;
+            movingText.enabled = false;
         }
         else
         {

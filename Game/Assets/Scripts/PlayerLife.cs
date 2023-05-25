@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerLife : MonoBehaviour
 	public Sprite emptyHearts;
 	public int numberHealthNow = 4;
     private int healCounter;
+    public TextMeshProUGUI healingText;
 
     private void Start()
     {
@@ -66,6 +68,7 @@ public class PlayerLife : MonoBehaviour
             healCounter++;
             HealingPotion.text = $"x{healCounter}";
             takeHeal.Play();
+            healingText.enabled = false;
         }
     }
 

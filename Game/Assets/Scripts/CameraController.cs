@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private int zoomAmount = 4;
+    public TextMeshProUGUI zoomText;
 
     private void Update()
     {
@@ -13,13 +14,14 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            // Уменьшаем размер камеры при нажатии на F
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ F
             Camera.main.orthographicSize += zoomAmount;
+            zoomText.enabled = false;
         }
 
         if (Input.GetKeyUp(KeyCode.F))
         {
-            // Возвращаем размер камеры обратно в исходное положение при отпускании F
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ F
             Camera.main.orthographicSize -= zoomAmount;
         }
     }
