@@ -16,6 +16,7 @@ TagManager:
   - Platform
   - BoxJump
   - BossHead
+  - EyeHead
   layers:
   - Default
   - TransparentFX

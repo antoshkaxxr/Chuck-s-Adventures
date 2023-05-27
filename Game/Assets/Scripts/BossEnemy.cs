@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackBoss;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -87,6 +88,7 @@ public class BossEnemy : MonoBehaviour
     
     public void DamagePlayer()
     {
+        attackBoss.Play();
         if (PlayerLife.playerHealth <= 0) return;
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);

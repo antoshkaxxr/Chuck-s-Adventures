@@ -44,4 +44,13 @@ public class DamageFlyingEye : MonoBehaviour
                 flyingEyeEnemy.TakeDamage(damage2);
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("EyeHead"))
+        {
+            var playerRb = GetComponent<Rigidbody2D>();
+            playerRb.AddForce(new Vector2(0, 2000f));
+        }
+    }
 }

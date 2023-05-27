@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FlyingEyeEnemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackFlyingEye;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -18,6 +19,7 @@ public class FlyingEyeEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
+    private Rigidbody2D rb;
     private PlayerLife PlayerLife;
     public Transform player;
     public bool isFlipped = false;
@@ -27,12 +29,16 @@ public class FlyingEyeEnemy : MonoBehaviour
     public int eyeHealth;
     public float deathDelay = 1;
 
+    public float sleepTime = 10.0f;
+    bool isSleeping = false;
+    
     private void Awake()
     {
         eyeHealth = maxHealth;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
-    
+
     private bool IsPlayerInSight()
     {
         var hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * (range * transform.localScale.x * colliderDistance), 
@@ -85,6 +91,7 @@ public class FlyingEyeEnemy : MonoBehaviour
     
     public void DamagePlayer()
     {
+        attackFlyingEye.Play();
         if (PlayerLife.playerHealth <= 0) return;
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);
@@ -92,13 +99,32 @@ public class FlyingEyeEnemy : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
+        if (isSleeping)
+        {
+            return;
+        }
         anim.SetTrigger("Hurt");
+        transform.Translate(new Vector2(0, 5f));
         eyeHealth -= damage;
         if (eyeHealth <= 0)
         {
             anim.SetTrigger("Die");
             Invoke(nameof(DestroyEnemy), deathDelay);
         }
+        else
+        {
+            StopCoroutine(nameof(SleepCoroutine));
+            StartCoroutine(SleepCoroutine());
+        }
+    }
+    
+    IEnumerator SleepCoroutine()
+    {
+        isSleeping = true;
+        anim.speed = 0.1f;  // меняем скорость проигрывания анимации
+        yield return new WaitForSeconds(sleepTime);
+        anim.speed = 1.0f;  // возвращаем скорость проигрывания анимации к исходной
+        isSleeping = false;
     }
 
     public void DestroyEnemy()

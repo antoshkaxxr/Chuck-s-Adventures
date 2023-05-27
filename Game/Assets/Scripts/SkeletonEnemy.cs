@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SkeletonEnemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackSkeleton;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -70,6 +71,7 @@ public class SkeletonEnemy : MonoBehaviour
 
     public void DamagePlayer()
     {
+        attackSkeleton.Play();
         if (PlayerLife.playerHealth <= 0) return;
         if (IsPlayerInSight())
             PlayerLife.TakeDamage(damage);

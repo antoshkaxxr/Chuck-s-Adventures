@@ -47,15 +47,12 @@ public class DamageBoss : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("BossHead"))
         {
-            bossEnemy.TakeDamage(damage1);
             var playerRb = GetComponent<Rigidbody2D>();
-            if (bossEnemy.isFlipped)
-                playerRb.AddForce(new Vector2(-7000f, 1000f));
-            else playerRb.AddForce(new Vector2(7000f, 1000f));
+            playerRb.AddForce(new Vector2(0, 2000f));
         }
-    }*/
+    }
 }
