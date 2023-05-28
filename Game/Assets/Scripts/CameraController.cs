@@ -14,14 +14,12 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            // ��������� ������ ������ ��� ������� �� F
             Camera.main.orthographicSize += zoomAmount;
             zoomText.enabled = false;
         }
 
         if (Input.GetKeyUp(KeyCode.F))
         {
-            // ���������� ������ ������ ������� � �������� ��������� ��� ���������� F
             Camera.main.orthographicSize -= zoomAmount;
         }
     }
