@@ -19,14 +19,10 @@ public class SettingMenu : MonoBehaviour
         List<string> options = new List<string>();
         resolutions = new Resolution[]
         {
-            new Resolution() { width = 640, height = 480 },
-            new Resolution() { width = 800, height = 600 },
             new Resolution() { width = 1366, height = 768 },
             new Resolution() { width = 1600, height = 900 },
             new Resolution() { width = 1920, height = 1080 },
-            new Resolution() { width = 1920, height = 1200 },
             new Resolution() { width = 2560, height = 1440 },
-            new Resolution() { width = 2560, height = 1600 },
             new Resolution() { width = 3840, height = 2160 },
         };
         currentResolutionIndex = 0;
