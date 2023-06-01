@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b87036f2dd2d94210852057068e96eb2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sorts Mill Goudy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 140a1f38f6fc949058f16c1a509fa23f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

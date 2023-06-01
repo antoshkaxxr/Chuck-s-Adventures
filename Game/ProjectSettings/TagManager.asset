@@ -6,6 +6,18 @@ TagManager:
   tags:
   - Trip
   - Trap
+  - Enemy
+  - MushroomEnemy
+  - SkeletonEnemy
+  - Artefact
+  - BossEnemy
+  - HealingPotion
+  - FlyingEyeEnemy
+  - Platform
+  - BoxJump
+  - BossHead
+  - EyeHead
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -16,11 +28,11 @@ TagManager:
   - Ground
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - MushroomEnemy
+  - SkeletonEnemy
+  - BossEnemy
+  - FlyingEyeEnemy
   - 
   - 
   - 
