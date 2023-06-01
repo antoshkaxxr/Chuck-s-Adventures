@@ -5,21 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class ChangeLevelMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private AudioSource pressButton;
+
     public void Level1()
-    {   
-        StartMenu.sceneIndex = 1;
-        SceneManager.LoadScene("Level1");
+    {
+        StartMenu.sceneIndex = 3;
+        SceneManager.LoadScene("LoadingScene1");
     }
     public void Level2()
     {
-        StartMenu.sceneIndex = 2;
-        SceneManager.LoadScene("Level2");
+        StartMenu.sceneIndex = 5;
+        SceneManager.LoadScene("LoadingScene2");
     }
     public void Level3()
     {
-        StartMenu.sceneIndex = 3;
-        SceneManager.LoadScene("Level3");
+        StartMenu.sceneIndex = 7;
+        SceneManager.LoadScene("LoadingScene3");
     }
     
     public void Back()

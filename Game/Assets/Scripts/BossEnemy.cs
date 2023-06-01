@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class BossEnemy : MonoBehaviour
     [Header ("Health")]
     public int maxHealth = 25;
     public int bossHealth;
-    public float deathDelay = 2;
+    public float deathDelay = 1;
 
     private void Awake()
     {
@@ -101,12 +102,17 @@ public class BossEnemy : MonoBehaviour
         if (bossHealth <= 0)
         {
             anim.SetTrigger("Die");
-            Invoke(nameof(DestroyEnemy), deathDelay);
+            Invoke(nameof(LoadNextLevel), 1f);
         }
     }
 
     public void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

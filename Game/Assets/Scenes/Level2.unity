@@ -5508,6 +5508,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
       value: 
       objectReference: {fileID: 664538015}
@@ -6169,6 +6173,10 @@ PrefabInstance:
     - target: {fileID: 2148919896970413000, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 27.401
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
@@ -22620,6 +22628,10 @@ PrefabInstance:
     - target: {fileID: 2148919896970413000, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: m_LocalPosition.y
       value: -25.960001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
@@ -92580,6 +92592,10 @@ PrefabInstance:
       value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: hurtSkeleton
       value: 
       objectReference: {fileID: 0}
@@ -93922,6 +93938,10 @@ PrefabInstance:
     - target: {fileID: 2148919896970413000, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
@@ -105836,6 +105856,10 @@ PrefabInstance:
       value: -3.0200014
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
       value: 
       objectReference: {fileID: 567919141}
@@ -108272,6 +108296,10 @@ PrefabInstance:
       value: 32.789997
       objectReference: {fileID: 0}
     - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148919896970413001, guid: d9764e89a1f1a6b469b7e0ed18527346, type: 3}
       propertyPath: attackSkeleton
       value: 
       objectReference: {fileID: 1823540567}
@@ -108668,6 +108696,10 @@ PrefabInstance:
       propertyPath: hearts.Array.data[4]
       value: 
       objectReference: {fileID: 35862078}
+    - target: {fileID: 7801014588445104494, guid: 2123cbdb2e6b0744ab712752983b187e, type: 3}
+      propertyPath: damage2
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7801014588445104494, guid: 2123cbdb2e6b0744ab712752983b187e, type: 3}
       propertyPath: skeletonEnemy1
       value: 

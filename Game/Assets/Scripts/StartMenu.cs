@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
 	public GameObject SettingUI;
+
 	public GameObject Levels;
+
 	public static int sceneIndex=1;
+
+    [SerializeField] private AudioSource pressButton;
+
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneIndex);
@@ -20,6 +25,7 @@ public class StartMenu : MonoBehaviour
 	
 	public void SettingGame()
     {
+        pressButton.Play();
         SettingUI.SetActive(true);
     	SettingMenu settingMenu = FindObjectOfType<SettingMenu>();
     	settingMenu.LoadSettings(0);
@@ -27,10 +33,11 @@ public class StartMenu : MonoBehaviour
 	
 	public void ChangeLevel()
 	{
-		Levels.SetActive(true);
-	}
-	
-	void Update()
+        pressButton.Play();
+        Levels.SetActive(true);
+    }
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -40,6 +47,7 @@ public class StartMenu : MonoBehaviour
 	
 	public void BackMenu()
     {
+        pressButton.Play();
         SettingUI.SetActive(false);
     }
 }
