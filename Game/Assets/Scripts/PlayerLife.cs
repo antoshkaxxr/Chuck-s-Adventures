@@ -7,7 +7,7 @@ using TMPro;
 
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] private AudioSource damageSound;
+    [SerializeField] public AudioSource damageSound;
     [SerializeField] private AudioSource takeHeal;
     [SerializeField] private AudioSource useHeal;
     [SerializeField] private Text HealingPotion;
@@ -16,7 +16,7 @@ public class PlayerLife : MonoBehaviour
     public static bool isDead = false;
     public static bool isHurt = false;
     private Rigidbody2D rb;
-    private Animator anim;
+    public Animator anim;
     private SpriteRenderer sprite;
 	
 	public Image[] hearts;

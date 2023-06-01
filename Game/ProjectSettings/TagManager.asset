@@ -17,6 +17,7 @@ TagManager:
   - BoxJump
   - BossHead
   - EyeHead
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

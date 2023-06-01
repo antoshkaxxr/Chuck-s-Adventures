@@ -5,21 +5,23 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
-    [SerializeField] private AudioSource attackBoss;
+    [SerializeField] public AudioSource attackBoss;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] public float range;
+    [SerializeField] public int damage = 1;
     
     [Header ("Collider Parameters")]
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField]
+    public float colliderDistance;
+    [SerializeField] public BoxCollider2D boxCollider;
     
     [Header ("Player Layer")]
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField]
+    public LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
-    private Animator anim;
-    private PlayerLife PlayerLife;
+    public Animator anim;
+    public PlayerLife PlayerLife;
     public Transform player;
     public bool isFlipped = false;
     

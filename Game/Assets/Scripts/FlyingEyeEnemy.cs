@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class FlyingEyeEnemy : MonoBehaviour
 {
-    [SerializeField] private AudioSource attackFlyingEye;
+    [SerializeField] public AudioSource attackFlyingEye;
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] public float range;
+    [SerializeField] public int damage = 1;
     
     [Header ("Collider Parameters")]
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField]
+    public float colliderDistance;
+    [SerializeField] public BoxCollider2D boxCollider;
     
     [Header ("Player Layer")]
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField]
+    public LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
-    private Animator anim;
+    public Animator anim;
     private Rigidbody2D rb;
-    private PlayerLife PlayerLife;
+    public PlayerLife PlayerLife;
     public Transform player;
     public bool isFlipped = false;
     

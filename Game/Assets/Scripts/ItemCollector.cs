@@ -6,13 +6,14 @@ using TMPro;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int artefacts = 0;
+	public int artefacts = 0;
 	[SerializeField] private AudioSource collectArtefact;
 	public Image[] artefactsImage;
 	public Sprite artefactSprite;
 	public Sprite emptyArtefactSprite;
 	public TextMeshProUGUI artefactsText;
-	void Start()
+
+	public void Start()
     {
         for (int i = 0; i < artefactsImage.Length; i++)
    		{

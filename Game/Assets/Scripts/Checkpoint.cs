@@ -8,10 +8,11 @@ public class Checkpoint : MonoBehaviour
     public Transform player;
     public int index;
     public TextMeshProUGUI checkpointText;
-    void Awake()
+
+    public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (DataContainer.checkpointIndex == index)
+        if (player != null && DataContainer.checkpointIndex == index)
         {
             player.position = transform.position;
         }

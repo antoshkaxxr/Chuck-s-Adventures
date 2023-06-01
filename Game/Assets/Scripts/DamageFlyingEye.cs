@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DamageFlyingEye : MonoBehaviour
 {
-    [SerializeField] private AudioSource attackFlyingEye;
-    [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
+    [SerializeField] public AudioSource attackFlyingEye;
+    [SerializeField] public BoxCollider2D boxCollider;
+    [SerializeField] public LayerMask enemyLayer;
+    [SerializeField] public float range;
+    [SerializeField] public float colliderDistance;
 
     [Header("FlyingEye")] 
     public FlyingEyeEnemy flyingEyeEnemy;
-    [SerializeField] private int damage1 = 1;
-    [SerializeField] private int damage2 = 2;
+    [SerializeField] public int damage1 = 1;
+    [SerializeField] public int damage2 = 2;
 
     private bool IsEyeInSight()
     {
@@ -44,8 +44,8 @@ public class DamageFlyingEye : MonoBehaviour
                 flyingEyeEnemy.TakeDamage(damage2);
         }
     }
-    
-    private void OnTriggerEnter2D(Collider2D col)
+
+    public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("EyeHead"))
         {

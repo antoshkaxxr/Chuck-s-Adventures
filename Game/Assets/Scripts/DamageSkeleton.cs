@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DamageSkeleton : MonoBehaviour
 {
-    [SerializeField] private AudioSource attackSkeleton;
-    [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
+    [SerializeField] public AudioSource attackSkeleton;
+    [SerializeField] public BoxCollider2D boxCollider;
+    [SerializeField] public LayerMask enemyLayer;
+    [SerializeField] public float range;
+    [SerializeField] public float colliderDistance;
     
     [Header("Skeleton Enemies")]
     public SkeletonEnemy skeletonEnemy1;
@@ -20,8 +20,8 @@ public class DamageSkeleton : MonoBehaviour
     public SkeletonEnemy skeletonEnemy7;
     public SkeletonEnemy[] skeletonEnemies;
     public int skeletonCounter;
-    [SerializeField] private int damage1;
-    [SerializeField] private int damage2;
+    [SerializeField] public int damage1 = 1;
+    [SerializeField] public int damage2 = 3;
 
 
     public void Awake()
