@@ -5,11 +5,11 @@ using TMPro;
 
 public class DamageMushroom : MonoBehaviour
 {
-	[SerializeField] private AudioSource attackMob;
-    [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
+	[SerializeField] public AudioSource attackMob;
+    [SerializeField] public BoxCollider2D boxCollider;
+    [SerializeField] public LayerMask enemyLayer;
+    [SerializeField] public float range;
+    [SerializeField] public float colliderDistance;
     
     [Header("Mushroom Enemies")]
     public MushroomEnemy mushroomEnemy1;
@@ -19,8 +19,8 @@ public class DamageMushroom : MonoBehaviour
     public MushroomEnemy mushroomEnemy5;
     public MushroomEnemy[] mushroomEnemies;
     public int mushroomCounter;
-    [SerializeField] private int damage1 = 1;
-    [SerializeField] private int damage2 = 2;
+    [SerializeField] public int damage1 = 1;
+    [SerializeField] public int damage2 = 2;
 	public TextMeshProUGUI damageText;
 	public TextMeshProUGUI axesText; 
 	

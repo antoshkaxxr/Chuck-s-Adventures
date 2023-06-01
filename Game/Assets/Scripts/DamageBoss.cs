@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class DamageBoss : MonoBehaviour
 {
-    [SerializeField] private AudioSource attackBoss;
-    [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
+    [SerializeField] public AudioSource attackBoss;
+    [SerializeField] public BoxCollider2D boxCollider;
+    [SerializeField] public LayerMask enemyLayer;
+    [SerializeField] public float range;
+    [SerializeField] public float colliderDistance;
 
     [Header("Boss")] 
     public BossEnemy bossEnemy;
-    [SerializeField] private int damage1 = 1;
-    [SerializeField] private int damage2 = 2;
+    [SerializeField] public int damage1 = 1;
+    [SerializeField] public int damage2 = 2;
     
 
     private bool IsBossInSight()
