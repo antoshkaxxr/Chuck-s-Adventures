@@ -31,6 +31,6 @@ public class ChangeLevelTests
         tripCollider.transform.position = player.transform.position;
 
         // Assert
-        Assert.AreEqual(4, SceneManager.GetActiveScene().buildIndex);
+        Assert.AreEqual(9, SceneManager.GetActiveScene().buildIndex);
     }
 }
